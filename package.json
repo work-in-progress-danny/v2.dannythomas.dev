@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "biome lint ./src/**/*.test.{js,ts}"
+    "lint": "biome lint --apply ./src",
+    "format": "biome format --write ./src"
   },
   "dependencies": {
     "framer-motion": "^11.2.0",
