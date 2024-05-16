@@ -8,7 +8,7 @@ const monoton = Monoton({ weight: "400", subsets: ["latin"] });
 export const H2 = ({
 	animate,
 	...props
-}: React.ComponentProps<"h2"> & { animate: boolean }) => (
+}: React.ComponentProps<"h2"> & { animate?: boolean }) => (
 	<div className="relative">
 		<h2
 			{...props}
