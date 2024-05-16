@@ -1,14 +1,16 @@
 "use client";
 
 import { useMotionValueEvent, useScroll } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Streak = () => {
 	const { scrollY } = useScroll();
 
-	const [documentHeight, setDocumentHeight] = useState(
-		document.documentElement.scrollHeight,
-	);
+	const [documentHeight, setDocumentHeight] = useState(0);
+
+	useEffect(() => {
+		setDocumentHeight(document.documentElement.scrollHeight);
+	}, []);
 
 	useMotionValueEvent(scrollY, "change", () => {
 		if (documentHeight !== document.documentElement.scrollHeight) {
