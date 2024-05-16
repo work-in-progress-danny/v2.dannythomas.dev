@@ -24,10 +24,8 @@ export default function RootLayout({
 					rel="stylesheet"
 				/>
 			</head>
-			<body
-				className={`${inter.className} relative px-5 h-screen bg-yellow-50 flex justify-center w-full`}
-			>
-				<div className="max-w-7xl relative">
+			<body className={`${inter.className} bg-yellow-50 flex justify-center`}>
+				<div className="relative w-full max-w-7xl">
 					{children}
 					<Streak />
 				</div>

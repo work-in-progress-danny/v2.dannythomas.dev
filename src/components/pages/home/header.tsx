@@ -14,8 +14,10 @@ const shadowHeaderColours = [
 
 const Name = () => (
 	<>
-		<h1 className={`text-8xl font-bold ${monoton.className} `}>DANNY</h1>
-		<h1 className={`text-8xl font-bold pl-40 ${monoton.className}`}>THOMAS</h1>
+		<h1 className={`text-4xl sm:text-8xl ${monoton.className}`}>DANNY</h1>
+		<h1 className={`text-4xl sm:text-8xl pl-20 sm:pl-40 ${monoton.className}`}>
+			THOMAS
+		</h1>
 	</>
 );
 
@@ -33,22 +35,24 @@ export const Header = () => {
 		<>
 			<div
 				ref={headerRef}
-				className="pb-5 fixed top-0 border-b-2 w-1/2 border-black bg-yellow-50/90 backdrop-blur-sm"
+				className="fixed top-0 w-full max-w-7xl border-yellow-400 border-b sm:border-b-0"
 			>
-				<div className="relative z-10">
-					<Name />
-				</div>
-				{shadowHeaderColours.map((colour, index) => (
-					<motion.div
-						key={colour}
-						style={{ zIndex: 5 - index }}
-						className={`absolute top-0 left-0 ${colour}`}
-						animate={{ y: (index + 1) * 3, x: (index + 1) * 4 }}
-						transition={{ type: "spring", stiffness: 100 }}
-					>
+				<div className="w-full bg-yellow-50/90 backdrop-blur-sm pb-5">
+					<div className="relative z-10">
 						<Name />
-					</motion.div>
-				))}
+					</div>
+					{shadowHeaderColours.map((colour, index) => (
+						<motion.div
+							key={colour}
+							style={{ zIndex: 5 - index }}
+							className={`absolute top-0 left-0 ${colour}`}
+							animate={{ y: (index + 1) * 3, x: (index + 1) * 4 }}
+							transition={{ type: "spring", stiffness: 100 }}
+						>
+							<Name />
+						</motion.div>
+					))}
+				</div>
 			</div>
 			<div
 				style={{
