@@ -1,12 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Monoton } from "next/font/google";
-
-const shadowHeaderColours = [
-	"text-orange-500",
-	"text-yellow-500",
-	"text-red-500",
-];
+import { textColours } from "./pages/home/colours";
 
 const monoton = Monoton({ weight: "400", subsets: ["latin"] });
 
@@ -20,7 +15,7 @@ export const H2 = ({
 			className={`${props.className} text-3xl sm:text-5xl pb-5 ${monoton.className} z-10`}
 		/>
 		{animate &&
-			shadowHeaderColours.map((colour, index) => (
+			textColours.map((colour, index) => (
 				<motion.h2
 					key={colour}
 					style={{ zIndex: 5 - index, ...props.style }}

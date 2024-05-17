@@ -3,14 +3,9 @@ import { motion } from "framer-motion";
 import { Monoton } from "next/font/google";
 import { createContext, useContext, useEffect, useRef, useState } from "react";
 import type { MutableRefObject, ReactNode } from "react";
+import { textColours } from "./colours";
 
 const monoton = Monoton({ weight: "400", subsets: ["latin"] });
-
-const shadowHeaderColours = [
-	"text-orange-500",
-	"text-yellow-500",
-	"text-red-500",
-];
 
 const Name = () => (
 	<>
@@ -35,18 +30,18 @@ export const Header = () => {
 		<>
 			<div
 				ref={headerRef}
-				className="fixed top-0 w-full max-w-7xl border-yellow-400 border-b sm:border-b-0"
+				className="fixed top-0 w-full max-w-7xl border-yellow-100 border-b sm:border-b-0"
 			>
-				<div className="w-full bg-yellow-50/90 backdrop-blur-sm pb-5">
+				<div className="w-full bg-yellow-50/90 backdrop-blur-sm pb-2 sm:pb-5">
 					<div className="relative z-10">
 						<Name />
 					</div>
-					{shadowHeaderColours.map((colour, index) => (
+					{textColours.map((colour, index) => (
 						<motion.div
 							key={colour}
 							style={{ zIndex: 5 - index }}
 							className={`absolute top-0 left-0 ${colour}`}
-							animate={{ y: (index + 1) * 3, x: (index + 1) * 4 }}
+							animate={{ y: (index + 1) * 2, x: (index + 1) * 3 }}
 							transition={{ type: "spring", stiffness: 100 }}
 						>
 							<Name />

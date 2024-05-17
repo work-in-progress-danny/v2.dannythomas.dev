@@ -2,6 +2,7 @@
 
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
+import { backgroundColours } from "./colours";
 
 export const Streak = () => {
 	const { scrollY } = useScroll();
@@ -21,13 +22,11 @@ export const Streak = () => {
 	return (
 		<div
 			style={{ height: `${documentHeight}px` }}
-			className="h-max w-1/12 max-w-36 flex flex-row absolute top-0 right-10 z-0 overflow-hidden"
+			className="h-max w-1/6 sm:w-1/12 max-w-36 flex flex-row absolute top-0 right-10 sm:right-20 z-0 overflow-hidden"
 		>
-			<div className="bg-yellow-400 flex-grow" />
-			<div className="bg-orange-500 flex-grow" />
-			<div className="bg-red-600 flex-grow" />
-			<div className="bg-rose-700 flex-grow" />
-			<div className="bg-pink-800 flex-grow" />
+			{backgroundColours.map((colour) => (
+				<div key={colour} className={`${colour} flex-grow`} />
+			))}
 		</div>
 	);
 };
