@@ -1,16 +1,15 @@
-"use client";
 import { SubTitle } from "../components";
 
-const projects: { name: string; url?: string }[] = [
-	{
-		name: "Caitlin Grant Photography",
-		url: "https://caitlingrantphotography.com/",
-	},
-	{
-		name: "Debra's Care",
-		url: "https://debras.care",
-	},
-];
+// const projects: { name: string; url?: string }[] = [
+// 	{
+// 		name: "Caitlin Grant Photography",
+// 		url: "https://caitlingrantphotography.com/",
+// 	},
+// 	{
+// 		name: "Debra's Care",
+// 		url: "https://debras.care",
+// 	},
+// ];
 
 export const Projects = () => {
 	return (

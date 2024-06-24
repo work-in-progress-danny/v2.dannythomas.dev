@@ -1,16 +1,11 @@
-"use client";
-
-import { Monoton } from "next/font/google";
 import { useEffect, useState } from "react";
 import type { HTMLProps } from "react";
 import { textColours } from "./colours";
 
-const monoton = Monoton({ weight: "400", subsets: ["latin"] });
-
 type TitleProps = { title: string } & HTMLProps<HTMLDivElement>;
 
 export const SubTitle = ({ title, ...divProps }: TitleProps) => {
-	const commonStyle = `text-5xl bold ${monoton.className}`;
+	const commonStyle = "text-5xl bold title";
 	const upperCaseTitle = title.toUpperCase();
 	const [rendered, setRendered] = useState(false);
 
@@ -41,7 +36,9 @@ export const SubTitle = ({ title, ...divProps }: TitleProps) => {
 		<div
 			{...divProps}
 			className={`sticky ${divProps.className}`}
-			style={{ top: document?.getElementById("title")?.offsetHeight ?? 0 }}
+			style={{
+				top: window.document?.getElementById("title")?.offsetHeight ?? 0,
+			}}
 		>
 			{decoratorElements}
 			<h2 className={`${commonStyle} relative z-10`}>{upperCaseTitle}</h2>
@@ -50,7 +47,7 @@ export const SubTitle = ({ title, ...divProps }: TitleProps) => {
 };
 
 export const Title = ({ title, ...divProps }: TitleProps) => {
-	const commonStyle = `text-8xl bold ${monoton.className}`;
+	const commonStyle = "text-8xl bold title";
 	const upperCaseTitle = title.toUpperCase();
 	const [rendered, setRendered] = useState(false);
 

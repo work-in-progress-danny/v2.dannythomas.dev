@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.title {
+  font-family: "Monoton";
+}
+
+@font-face {
+  font-family: "Monoton";
+  src: local("Monoton"),
+    url('./assets/fonts/Monoton/Monoton-Regular.ttf')
+}

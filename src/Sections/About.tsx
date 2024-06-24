@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const content = [
 	"A creative designer, software engineer and tinkerer based in Melbourne, Australia.",
 ];
@@ -13,13 +11,6 @@ export const About = () => (
 				</p>
 			))}
 		</div>
-		<Image
-			className="h-full sm:w-2/5 rounded-lg"
-			layout="cover"
-			src={"/danny.png"}
-			alt={""}
-			width={"2000"}
-			height={"2000"}
-		/>
+		<img className="w-1/4 rounded-lg" src={"/danny.png"} alt={""} />
 	</div>
 );
