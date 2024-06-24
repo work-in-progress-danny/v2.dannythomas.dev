@@ -1,4 +1,4 @@
-import { H2 } from "@/components";
+import { SubTitle } from "../components";
 
 const socials = [
 	{
@@ -25,7 +25,7 @@ const socials = [
 
 export const Contact = () => (
 	<div>
-		<H2>CONTACT</H2>
+		<SubTitle title="contact" />
 		<div className="flex gap-3">
 			{socials.map(({ className, url }) => (
 				<a key={url} href={url} className="hover:text-orange-500 text-4xl">

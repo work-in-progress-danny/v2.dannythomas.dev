@@ -1,8 +1,8 @@
-import { Streak } from "@/components/pages/home";
 import "./globals.css";
 
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import { Streak } from "./components";
 
 const inter = Montserrat({ subsets: ["latin"] });
 

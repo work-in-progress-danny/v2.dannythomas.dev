@@ -4,7 +4,7 @@ const content = [
 	"A creative designer, software engineer and tinkerer based in Melbourne, Australia.",
 ];
 
-export const MidSection = () => (
+export const About = () => (
 	<div className="flex flex-col sm:flex-row justify-between gap-5">
 		<div className="flex flex-col gap-5">
 			{content.map((c) => (
