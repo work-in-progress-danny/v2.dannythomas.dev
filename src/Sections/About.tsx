@@ -6,7 +6,7 @@ export const About = () => (
 	<div className="flex flex-col sm:flex-row justify-between gap-5">
 		<div className="flex flex-col gap-5">
 			{content.map((c) => (
-				<p key={c} className="pt-5  w-full">
+				<p key={c} className="pt-5 w-full">
 					{c}
 				</p>
 			))}

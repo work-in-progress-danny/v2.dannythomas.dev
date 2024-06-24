@@ -5,7 +5,7 @@ import { textColours } from "./colours";
 type TitleProps = { title: string } & HTMLProps<HTMLDivElement>;
 
 export const SubTitle = ({ title, ...divProps }: TitleProps) => {
-	const commonStyle = "text-5xl bold title";
+	const commonStyle = "text-3xl sm:text-5xl bold title";
 	const upperCaseTitle = title.toUpperCase();
 	const [rendered, setRendered] = useState(false);
 
@@ -47,7 +47,7 @@ export const SubTitle = ({ title, ...divProps }: TitleProps) => {
 };
 
 export const Title = ({ title, ...divProps }: TitleProps) => {
-	const commonStyle = "text-8xl bold title";
+	const commonStyle = "text-5xl sm:text-8xl bold title";
 	const upperCaseTitle = title.toUpperCase();
 	const [rendered, setRendered] = useState(false);
 
