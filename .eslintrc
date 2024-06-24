@@ -1,0 +1,24 @@
+{
+  "extends": ["next", "next/core-web-vitals"],
+  "rules": {
+    "eqeqeq": "error",
+    "no-return-await": "warn",
+    "no-var": "error",
+    "prefer-const": "warn",
+    "no-trailing-spaces": "warn",
+    "eol-last": ["warn", "always"],
+    "no-unused-vars": [
+      "warn",
+      {
+        "args": "all",
+        "argsIgnorePattern": "^_",
+        "ignoreRestSiblings": true
+      }
+    ],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "never"],
+    "arrow-parens": ["error", "as-needed"],
+    "jsx-quotes": ["warn", "prefer-double"]
+  }
+}
