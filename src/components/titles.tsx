@@ -5,7 +5,7 @@ import { textColours } from "./colours";
 type TitleProps = { title: string } & HTMLProps<HTMLDivElement>;
 
 export const SubTitle = ({ title, ...divProps }: TitleProps) => {
-	const commonStyle = "text-3xl sm:text-5xl bold title";
+	const commonStyle = "text-3xl sm:text-5xl bold title pb-5";
 	const upperCaseTitle = title.toUpperCase();
 	const [rendered, setRendered] = useState(false);
 
@@ -16,14 +16,16 @@ export const SubTitle = ({ title, ...divProps }: TitleProps) => {
 	const decoratorElements = textColours.map((colour, index) => {
 		const style = {
 			transform: `translateX(${1 * (index + 1)}px) translateY(${index + 1}px)`,
-			transition: "transform 1s ease-in-out",
 			zIndex: 10 - index,
+		};
+		const animationStyle = {
+			transition: "transform 1s ease-in-out",
 		};
 
 		return (
 			<p
 				key={title + colour}
-				style={rendered ? style : {}}
+				style={rendered ? { ...style, ...animationStyle } : animationStyle}
 				aria-hidden
 				className={`${commonStyle} ${colour} absolute `}
 			>
@@ -41,7 +43,15 @@ export const SubTitle = ({ title, ...divProps }: TitleProps) => {
 			}}
 		>
 			{decoratorElements}
-			<h2 className={`${commonStyle} relative z-10`}>{upperCaseTitle}</h2>
+			<h2
+				onMouseOver={() => rendered && setRendered(false)}
+				onMouseLeave={() => !rendered && setRendered(true)}
+				onFocus={() => rendered && setRendered(false)}
+				onBlur={() => !rendered && setRendered(true)}
+				className={`${commonStyle} relative z-10`}
+			>
+				{upperCaseTitle}
+			</h2>
 		</div>
 	);
 };
@@ -60,14 +70,17 @@ export const Title = ({ title, ...divProps }: TitleProps) => {
 			transform: `translateX(${2 * (index + 1)}px) translateY(${
 				2 * (index + 1)
 			}px)`,
-			transition: "transform 1s ease-in-out",
 			zIndex: 10 - index,
+		};
+
+		const animationStyle = {
+			transition: "transform 1s ease-in-out",
 		};
 
 		return (
 			<p
 				key={title + colour}
-				style={rendered ? style : {}}
+				style={rendered ? { ...style, ...animationStyle } : animationStyle}
 				aria-hidden
 				className={`${commonStyle} ${colour} absolute`}
 			>
@@ -79,7 +92,28 @@ export const Title = ({ title, ...divProps }: TitleProps) => {
 	return (
 		<div {...divProps}>
 			{decoratorElements}
-			<h1 className={`${commonStyle} relative z-10`}>{upperCaseTitle}</h1>
+			<h1
+				className={`${commonStyle} relative z-10`}
+				onMouseOver={() => rendered && setRendered(false)}
+				onMouseLeave={() => !rendered && setRendered(true)}
+				onFocus={() => rendered && setRendered(false)}
+				onBlur={() => !rendered && setRendered(true)}
+			>
+				{upperCaseTitle}
+			</h1>
 		</div>
+	);
+};
+
+export const H3 = ({ title, ...divProps }: TitleProps) => {
+	const upperCaseTitle = title.toUpperCase();
+
+	return (
+		<h3
+			{...divProps}
+			className={`subtitle text-2xl font-bold ${divProps.className}`}
+		>
+			{upperCaseTitle}
+		</h3>
 	);
 };

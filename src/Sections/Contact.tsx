@@ -1,4 +1,4 @@
-import { SubTitle } from "../components";
+import { SubTitle } from "@/components";
 
 const socials = [
 	{
@@ -24,7 +24,7 @@ const socials = [
 ];
 
 export const Contact = () => (
-	<div>
+	<div className="flex flex-col w-full">
 		<SubTitle title="contact" />
 		<div className="flex gap-3">
 			{socials.map(({ className, url }) => (

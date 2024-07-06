@@ -11,6 +11,12 @@ export const About = () => (
 				</p>
 			))}
 		</div>
-		<img className="w-1/4 rounded-lg" src={"/danny.png"} alt={""} />
+		<img
+			className="w-1/4 rounded-md"
+			height={518}
+			width={370}
+			src={"/danny.png"}
+			alt={""}
+		/>
 	</div>
 );

@@ -6,8 +6,22 @@
   font-family: "Monoton";
 }
 
+.subtitle {
+  font-family: "Lato";
+}
+
 @font-face {
   font-family: "Monoton";
   src: local("Monoton"),
     url('./assets/fonts/Monoton/Monoton-Regular.ttf')
+}
+
+body {
+  background-color: #fefce8;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: local("Lato"),
+    url('./assets/fonts/Lato/Lato-Regular.ttf')
 }

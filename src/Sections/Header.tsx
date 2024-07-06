@@ -1,4 +1,4 @@
-import { Title } from "../components";
+import { Title } from "@/components";
 
 export const Header = () => {
 	return (

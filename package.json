@@ -1,28 +1,41 @@
 {
-  "name": "v3",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "preview": "vite preview",
-    "lint": "biome lint --apply ./src",
-    "format": "biome format --write ./src"
-  },
-  "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^1.8.2",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react-swc": "^3.5.0",
-    "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.4",
-    "typescript": "^5.2.2",
-    "vite": "^5.3.1"
-  }
+	"name": "v3",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc -b && vite build",
+		"preview": "vite preview",
+		"lint": "biome lint --apply ./src",
+		"format": "biome format --write ./src"
+	},
+	"dependencies": {
+		"@radix-ui/react-select": "^2.1.1",
+		"@radix-ui/react-tooltip": "^1.1.1",
+		"@react-three/drei": "^9.107.1",
+		"@react-three/fiber": "^8.16.8",
+		"@use-gesture/react": "^10.3.1",
+		"class-variance-authority": "^0.7.0",
+		"clsx": "^2.1.1",
+		"lucide-react": "^0.397.0",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"tailwind-merge": "^2.3.0",
+		"tailwindcss-animate": "^1.0.7",
+		"three": "^0.165.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.8.2",
+		"@types/node": "^20.14.8",
+		"@types/react": "^18.3.3",
+		"@types/react-dom": "^18.3.0",
+		"@types/three": "^0",
+		"@vitejs/plugin-react-swc": "^3.5.0",
+		"autoprefixer": "^10.4.19",
+		"postcss": "^8.4.38",
+		"tailwindcss": "^3.4.4",
+		"typescript": "^5.2.2",
+		"vite": "^5.3.1"
+	}
 }
